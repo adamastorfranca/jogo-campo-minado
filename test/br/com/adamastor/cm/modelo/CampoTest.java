@@ -133,12 +133,9 @@ public class CampoTest {
 	void abrindoNaoMarcadoNaoMinadoNaoAbertoComVizinhos() {
 		Campo vizinho = new Campo(1, 2);
 		Campo vizinhoDoVizinho = new Campo(0, 2);
-
 		campo.adicionarVizinho(vizinho);
 		vizinho.adicionarVizinho(vizinhoDoVizinho);
-
-		campo.abrir();
-		
+		campo.abrir();		
 		Assert.assertTrue(vizinhoDoVizinho.isAberto() && vizinho.isAberto());
 	}
 	
@@ -148,13 +145,10 @@ public class CampoTest {
 		Campo vizinhoMinado = new Campo(1, 3);
 		Campo vizinhoDoVizinho = new Campo(0, 2);
 		vizinhoMinado.minar();
-
 		campo.adicionarVizinho(vizinho);
 		vizinho.adicionarVizinho(vizinhoDoVizinho);
 		vizinho.adicionarVizinho(vizinhoMinado);
-
-		campo.abrir();
-		
+		campo.abrir();		
 		Assert.assertFalse(vizinhoDoVizinho.isAberto());
 	}
 }
